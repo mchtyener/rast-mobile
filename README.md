@@ -3,6 +3,8 @@
 Bu uygulama, Angular kullanılarak geliştirilmiş bir kullanıcı arayüzüyle, Node.js tabanlı bir backend tarafından desteklenen bir sosyal medya yönetim sistemidir. 
 Bu sistemde, kullanıcılar sosyal medya içeriklerini ekleyebilir, güncelleyebilir ve listeleme işlemlerini gerçekleştirebilirler.
 
+Bu uygulama, Mobile First CSS önceliklerini benimseyerek, mobil cihazlara odaklanarak başlamış ve tasarım sürecini bu yönde ilerletmiştir.
+
 Özellikler
 Ekleme: Kullanıcılar uygulama üzerinden yeni sosyal medya içerikleri ekleyebilirler.
 Güncelleme: Varolan sosyal medya içerikleri üzerinde düzenleme yapma olanağı sağlar. Kullanıcılar, içeriklerini güncelleyerek değişiklikleri hızlıca uygulayabilirler.
