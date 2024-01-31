@@ -1,0 +1,113 @@
+@import "../../../assets/scss/helper";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 20px 30px;
+
+
+  @media #{$tablet-portrait} {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px 60px;
+  }
+
+  @media #{$tablet-landscape} {
+    padding: 20px 60px;
+    justify-content: space-between;
+  }
+
+  .desktop-nav {
+    display: none;
+    @media #{$tablet-landscape} {
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-container {
+      display: flex;
+      @media #{$tablet-portrait} {
+        align-items: center;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
+      }
+      @media #{$tablet-landscape} {
+        gap: 30px;
+        width: 100%;
+        justify-content: space-evenly;
+      }
+      @media #{$desktop} {
+        padding: 0 200px;
+      }
+
+      ul {
+        li {
+          list-style: none;
+
+          a {
+            font: 400 14px/21px 'Poppins';
+            color: #000000;
+            text-decoration: none;
+
+          }
+        }
+      }
+    }
+    .social-media-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-between;
+      width: 120px;
+    }
+  }
+
+  .mobile-nav {
+
+    @media #{$tablet-landscape} {
+      display:none
+    }
+
+    .logo-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .close-icon{
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .menu-container {
+      .menu-item-container {
+        ul {
+          li {
+            list-style: none;
+
+            a {
+              font: 400 18px/30px 'Poppins';
+              color: #000000;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .social-media-container {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+      }
+    }
+
+  }
+}
+

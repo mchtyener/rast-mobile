@@ -1,0 +1,28 @@
+@import "../assets/scss/helper";
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+
+  @media #{$desktop} {
+    padding: 0 10px;
+  }
+
+  @media #{$phone-xsmall} {
+    padding: 0 10px;
+  }
+
+
+  .container {
+    width: 100%;
+    min-height: 841px;
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #EFF2FF -30.56%, rgba(232, 236, 255, 0) 135.85%);
+
+  }
+
+}

@@ -1,0 +1,50 @@
+<div class="app-modal-overlay">
+  <ng-container [formGroup]="fg">
+    <div class="modal">
+      <div class="modal-header">
+        <img (click)="closeModal()" src="../../../assets/img/icons/close.svg" alt="">
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="link">{{ModalText.link}}</label>
+          <input type="text" formControlName="link" id="link">
+          <label *ngIf="fg.get('link')?.hasError('required')">Dolrulmesı zorunlu</label>
+          <label *ngIf="fg.controls['link']?.errors?.['minlength']">Minimum 5 karakterden oluşmak zorunda</label>
+        </div>
+
+        <div class="form-group  my">
+          <label for="name">{{ModalText.name}}</label>
+          <input type="text" formControlName="name" id="name">
+          <label *ngIf="fg.get('name')?.hasError('required')">Dolrulmesı zorunlu</label>
+          <label *ngIf="fg.controls['name']?.errors?.['minlength']">Minimum 2 karakterden oluşmak zorunda</label>
+        </div>
+
+        <div class="form-group">
+          <label for="description">{{ModalText.description}}</label>
+          <input type="text" formControlName="description" id="description">
+          <label *ngIf="fg.get('description')?.hasError('required')">Dolrulmesı zorunlu</label>
+          <label *ngIf="fg.controls['description']?.errors?.['minlength']">Minimum 5 karakterden oluşmak zorunda</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a (click)="closeModal()" class="exit-btn">{{ModalText.exit}}</a>
+        <ng-container *ngIf="updateStatus(); else save">
+          <button (click)="socialMediaUpdate()" [disabled]="fg.invalid"
+                  [ngClass]="{'disabled':fg.invalid,'active':!fg.invalid}"
+                  class="save-btn"
+          >{{ModalText.update}}
+          </button>
+        </ng-container>
+        <ng-template #save>
+          <button (click)="createSocialMedia()" [disabled]="fg.invalid"
+                  [ngClass]="{'disabled':fg.invalid,'active':!fg.invalid}"
+                  class="save-btn"
+          >{{ModalText.save}}
+          </button>
+        </ng-template>
+
+      </div>
+    </div>
+  </ng-container>
+</div>

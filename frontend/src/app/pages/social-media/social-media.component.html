@@ -1,0 +1,117 @@
+<div class="card">
+
+
+  <div class="card-header">
+    <div class="search-container">
+      <div class="search">
+        <input (keyup)="tableSearch()" [(ngModel)]="filteredText" type="text"
+               placeholder="Search objects...">
+        <div>
+          <img src="assets/img/icons/search.png" alt="Search Icon">
+        </div>
+      </div>
+      <div [ngClass]="{'filterShow':searchBox,'filter':!searchBox}" (mousemove)="showFilterContainer()"
+           (mouseleave)="hideFilterContainer()">
+        <div [ngClass]="{'d-flex':searchBox,'d-none':!searchBox}">
+          <div>
+            <div>
+              <input (click)="checkFilter('name')" type="radio" id="name" value="name" name="filter">
+              <label for="name">Name</label>
+            </div>
+            <div>
+              <input (click)="checkFilter('link')" type="radio" id="link" value="link" name="filter">
+              <label for="link">Link</label>
+            </div>
+          </div>
+        </div>
+        <img *ngIf="!searchBox" src="assets/img/icons/filter.png" alt="Filter Icon">
+      </div>
+
+
+    </div>
+    <div class="new-account-container" (click)="showModal()">
+      <a><span>+</span>Yeni Hesap Ekle</a>
+    </div>
+  </div>
+  <ngx-datatable
+    #table
+    class="material"
+    [rows]="rows"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="'auto'"
+    [limit]="10"
+    [columnMode]="ColumnMode.force"
+  >
+    <ngx-datatable-column name="Sosyal Medya Linki" prop="link">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        <a class="social-media-link"  target="_blank" href=" {{row.link}}"> {{row.link}}</a>
+
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Sosyal Medya Adı" prop="name">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.name}}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Açıklama" prop="description">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        {{row.description}}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Güncelleme" prop="description">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        <img (click)="onActivate(row)" width="20" src="assets/img/icons/edit-icon.png" alt="">
+      </ng-template>
+    </ngx-datatable-column>
+
+
+    <ngx-datatable-footer>
+      <ng-template
+        let-rowCount="rowCount"
+        let-pageSize="pageSize"
+        let-curPage="curPage"
+        ngx-datatable-footer-template>
+        <div class="row">
+          <div class="col">
+            <app-social-media-pager
+              [page]="curPage"
+              [visiblePagesCount]="currentVisible"
+              [size]="pageSize"
+              [count]="rowCount"
+              [hidden]="false"
+              (change)="table.onFooterPage($event)"
+            >
+            </app-social-media-pager>
+          </div>
+        </div>
+      </ng-template>
+    </ngx-datatable-footer>
+
+  </ngx-datatable>
+  <div class="card-footer ">
+    <div class="rows-container">
+      <p>Show:</p>
+      <div>
+        <input [(ngModel)]="rowCount" type='text' mask="000000000"
+               [allowNegativeNumbers]="true">
+        <div>
+          <img src="assets/img/icons/increase.png" (click)="increaseRowCount()" alt="increase">
+          <img src="assets/img/icons/reduce.png" (click)="decreaseRowCount()" alt="reduce">
+        </div>
+      </div>
+    </div>
+    <div class="pagination-container">
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

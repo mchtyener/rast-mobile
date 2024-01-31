@@ -1,0 +1,53 @@
+<nav>
+    <div class="mobile-nav">
+        <div class="logo-container">
+            <a routerLink=""> <img src="../../../assets/img/logo.svg" alt="logo"></a>
+            <a (click)="menuOnOff()" *ngIf="showbtn">
+                <img width="50" src="../../../assets/img/icons/mobil-menu.png"
+                     alt="logo">
+            </a>
+            <a *ngIf="!showbtn" (click)="menuOnOff()">
+                <img class="close-icon" src="../../../assets/img/icons/close.png"
+                     alt="logo">
+            </a>
+        </div>
+        <div class="menu-container" *ngIf="!showbtn">
+            <div class="menu-item-container">
+                <ng-container *ngFor="let item of router">
+                    <ul>
+                        <li><a routerLink="{{item?.path}}">{{item?.text}}</a></li>
+                    </ul>
+                </ng-container>
+            </div>
+            <div class="social-media-container">
+                <ng-container *ngFor="let item of socialMediaNavigation">
+                    <a [href]="item.url" target="_blank"><img src="../../{{item?.img}}" alt="{{item?.alt}}"></a>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <div class="desktop-nav">
+        <div class="logo-container">
+            <a routerLink=""> <img src="../../../assets/img/logo.svg" alt="logo"></a>
+        </div>
+        <div class="menu-container">
+            <ng-container *ngFor="let item of router">
+                <ul>
+                    <li><a routerLink="{{item?.path}}">{{item?.text}}</a></li>
+                </ul>
+            </ng-container>
+        </div>
+        <div class="social-media-container">
+            <ng-container *ngFor="let item of socialMediaNavigation">
+                <a [href]="item.url" target="_blank"><img src="../../{{item?.img}}" alt="{{item?.alt}}"></a>
+            </ng-container>
+        </div>
+    </div>
+
+</nav>
+
+
+
+
+
