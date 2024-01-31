@@ -6,8 +6,11 @@ Bu sistemde, kullanıcılar sosyal medya içeriklerini ekleyebilir, güncelleyeb
 Bu uygulama, Mobile First CSS önceliklerini benimseyerek, mobil cihazlara odaklanarak başlamış ve tasarım sürecini bu yönde ilerletmiştir.
 
 Özellikler
+
 Ekleme: Kullanıcılar uygulama üzerinden yeni sosyal medya içerikleri ekleyebilirler.
+
 Güncelleme: Varolan sosyal medya içerikleri üzerinde düzenleme yapma olanağı sağlar. Kullanıcılar, içeriklerini güncelleyerek değişiklikleri hızlıca uygulayabilirler.
+
 Listeleme: Eklenen sosyal medya içerikleri kullanıcıya düzenli bir şekilde listelenir. Kullanıcılar, içerikleri filtreleyerek veya sıralayarak istedikleri bilgilere daha hızlı erişebilirler.
 
 
