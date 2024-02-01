@@ -31,9 +31,7 @@ Kullanıcı arayüzü, Angular framework'ü kullanılarak geliştirilmiştir. Bu
 #### Kullanılan Paketler
 
 - **@ng-bootstrap/ng-bootstrap**: Angular projelerinde kullanılmak üzere Bootstrap bileşenlerini entegre etmek için kullanılır.
-- **@popperjs/core**: Bootstrap için gereken Popper.js kütüphanesini sağlar.
 - **@swimlane/ngx-datatable**: Tablo (datatable) bileşeni için kullanılır ve veri tablolarını daha etkili bir şekilde görüntülemek için kullanışlıdır.
-- **bootstrap**: Bootstrap CSS framework'ünün Angular projesine entegre edilmesini sağlar.
 - **ngx-mask**: Metin girişlerine maskeleme uygulamak için kullanılır.
 
 ### Backend (Node.js)
