@@ -14,13 +14,10 @@
            (mouseleave)="hideFilterContainer()">
         <div [ngClass]="{'d-flex':searchBox,'d-none':!searchBox}">
           <div>
-            <div>
-              <input [checked]="filteredCheckout=='name'" (click)="checkFilter('name')" type="radio" id="name" value="name" name="filter">
-              <label for="name">Name</label>
-            </div>
-            <div>
-              <input [checked]="filteredCheckout=='link'" (click)="checkFilter('link')" type="radio" id="link" value="link" name="filter">
-              <label for="link">Link</label>
+            <div *ngFor="let item of filters">
+              <input [checked]="filteredCheckout==item.name" (click)="checkFilter(item.name)" [type]="item.inputType"
+                     [id]="item.name" [value]="item.name" [name]="item.type">
+              <label for="{{item.name}}">{{item.name | uppercase}}</label>
             </div>
           </div>
         </div>
@@ -45,7 +42,7 @@
   >
     <ngx-datatable-column name="Sosyal Medya Linki" prop="link">
       <ng-template let-row="row" ngx-datatable-cell-template>
-        <a class="social-media-link"  target="_blank" href=" {{row.link}}"> {{row.link}}</a>
+        <a class="social-media-link" target="_blank" href=" {{row.link}}"> {{row.link}}</a>
 
       </ng-template>
     </ngx-datatable-column>

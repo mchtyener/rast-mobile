@@ -19,7 +19,8 @@ Listeleme: Eklenen sosyal medya içerikleri kullanıcıya düzenli bir şekilde 
 1. Backend kısmını başlatmak için öncelikle backend klasörü içerisine gidip  `npm install` komutunu çalıştırın ve işlem bittikten sonra ise  `npm start` komutunu çalıştırın.
 2. Frontend kısmını başlatmak için öncelikle frontend klasörü içerisine gidip `npm install` komutunu çalıştırın ve işlem bittikten sonra ise  `npm start` komutunu çalıştırın.
 3. Bu işlemleri tamamladıysanız eğer tarayıcınız üzerinden http://localhost:4200/ adresine gidip projeyi inceleyebilirisiniz.
-
+4. (Opsiyonel) Bu adımda, db oluşturma işlemi Atlas üzerinde gerçekleştiği için sizin IP adresinizi projeye eklemem gerekiyor. Bu nedenle lütfen benimle iletişime geçin. (linkedin: mchtyener)
+5. Alternatif olarak, kendiniz Atlas üzerinden bir proje oluşturup kendi bilgilerinizle bağlantı sağlayabilirsiniz
 Uygulama, kullanıcıların sosyal medya içeriklerini kolayca yönetmelerine olanak tanır ve Angular ile modern bir kullanıcı arayüzü sunar.
 
 ## Teknolojiler

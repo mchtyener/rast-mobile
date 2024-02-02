@@ -4,16 +4,17 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import {SocialMediaItem} from "../../core/model/socialMediaItem";
-import {NgxMaskDirective, provideNgxMask} from "ngx-mask";
-import {FormsModule} from "@angular/forms";
-import {ModalComponent} from "../../layout/modal/modal.component";
-import {AsyncPipe, NgClass, NgForOf, NgIf} from "@angular/common";
-import {RouterLink} from "@angular/router";
-import {SocialMediaService} from "../../core/services/social-media.service";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {ColumnMode, DatatableComponent, NgxDatatableModule} from "@swimlane/ngx-datatable";
-import {SocialMediaPagerComponent} from "./social-media-pager/social-media-pager.component";
+import {SocialMediaItem } from "../../core/model/socialMediaItem";
+import { NgxMaskDirective, provideNgxMask } from "ngx-mask";
+import { FormsModule } from "@angular/forms";
+import { ModalComponent } from "../../layout/modal/modal.component";
+import { AsyncPipe, NgClass, NgForOf, NgIf, UpperCasePipe } from "@angular/common";
+import { RouterLink } from "@angular/router";
+import { SocialMediaService } from "../../core/services/social-media.service";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { ColumnMode, DatatableComponent, NgxDatatableModule } from "@swimlane/ngx-datatable";
+import { SocialMediaPagerComponent } from "./social-media-pager/social-media-pager.component";
+import { filters } from "../../core/data/data";
 
 
 @Component({
@@ -30,6 +31,7 @@ import {SocialMediaPagerComponent} from "./social-media-pager/social-media-pager
     AsyncPipe,
     NgxDatatableModule,
     SocialMediaPagerComponent,
+    UpperCasePipe,
   ],
   providers: [
     provideNgxMask(),
@@ -140,4 +142,6 @@ export class SocialMediaComponent implements OnInit {
   checkFilter(name: string) {
     this.tableSearch(name)
   }
+
+  protected readonly filters = filters;
 }
