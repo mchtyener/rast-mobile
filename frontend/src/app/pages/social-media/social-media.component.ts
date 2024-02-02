@@ -52,6 +52,7 @@ export class SocialMediaComponent implements OnInit {
   rowCount: number = 3;
 
   filteredText: string = ''
+  filteredCheckout: string = 'link'
 
   ColumnMode = ColumnMode;
 
@@ -76,6 +77,7 @@ export class SocialMediaComponent implements OnInit {
       this.tempData = this.rows
       this.onLimitChange();
       this.onVisibleChange();
+      this.tableSearch();
     })
   }
 
@@ -116,6 +118,7 @@ export class SocialMediaComponent implements OnInit {
 
     this.rows = this.tempData.filter((d: SocialMediaItem) => {
       const propToSearch = (type === 'link') ? d.link.toLowerCase() : d.name.toLowerCase();
+      this.filteredCheckout = type === 'link' ? 'link' : 'name'
       return propToSearch.indexOf(val) !== -1 || !val;
     });
   }

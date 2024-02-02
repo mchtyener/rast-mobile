@@ -15,11 +15,11 @@
         <div [ngClass]="{'d-flex':searchBox,'d-none':!searchBox}">
           <div>
             <div>
-              <input (click)="checkFilter('name')" type="radio" id="name" value="name" name="filter">
+              <input [checked]="filteredCheckout=='name'" (click)="checkFilter('name')" type="radio" id="name" value="name" name="filter">
               <label for="name">Name</label>
             </div>
             <div>
-              <input (click)="checkFilter('link')" type="radio" id="link" value="link" name="filter">
+              <input [checked]="filteredCheckout=='link'" (click)="checkFilter('link')" type="radio" id="link" value="link" name="filter">
               <label for="link">Link</label>
             </div>
           </div>
@@ -93,7 +93,7 @@
     <div class="rows-container">
       <p>Show:</p>
       <div>
-        <input [(ngModel)]="rowCount" type='text' mask="000000000"
+        <input (input)="onLimitChange()" [(ngModel)]="rowCount" type='text' mask="000000000"
                [allowNegativeNumbers]="true">
         <div>
           <img src="assets/img/icons/increase.png" (click)="increaseRowCount()" alt="increase">
